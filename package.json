@@ -1,0 +1,20 @@
+{
+	"name": "sezzle-assignment",
+	"version": "1.0.0",
+	"description": "",
+	"main": "app.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node app.js"
+	},
+	"keywords": [],
+	"author": "Shubhashish Verma",
+	"license": "ISC",
+	"bin": {
+		"imdb_chart_fetcher": "app.js"
+	},
+	"dependencies": {
+		"axios": "^0.21.1",
+		"jsdom": "^16.4.0"
+	}
+}
