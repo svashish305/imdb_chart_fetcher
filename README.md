@@ -1,4 +1,4 @@
-# A command-line script that takes input the **chart_url**​ and ​**items_count**​,
+# A command-line script that takes input the **chart_url**​ and ​**items_count**
 
 where chart_url​ is one of IMDb Top Indian Charts:
 

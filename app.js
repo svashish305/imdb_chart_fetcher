@@ -19,19 +19,23 @@ console.log('Loading Movies...');
 	}
 	let movies = [];
 	for (let i = 1; i <= items_count; i++) {
-		let title = tableRows[i].querySelector('td:nth-child(2) a').innerHTML;
-		let movie_release_year = tableRows[i]
+		const title = tableRows[i].querySelector('td:nth-child(2) a').innerHTML;
+		const movie_release_year = tableRows[i]
 			.querySelector('td:nth-child(2) span')
 			.innerHTML.substr(1, 4);
-		let imdb_rating = tableRows[i].querySelector('td:nth-child(3) strong')
+		const imdb_rating = tableRows[i].querySelector('td:nth-child(3) strong')
 			.innerHTML;
-		let movieDetailsUrl =
+		const movieDetailsUrl =
 			baseUrl + tableRows[i].querySelector('td:nth-child(2)').children[0].href;
 		const movieDetails = await axios.get(movieDetailsUrl);
 		const domDoc2 = new JSDOM(movieDetails.data).window.document;
-		let summary = domDoc2.querySelector('.summary_text').innerHTML.trim();
-		let duration = domDoc2.querySelector('div .subtext time').innerHTML.trim();
-		let genre = domDoc2.querySelector('div .subtext a').innerHTML;
+		const summary = domDoc2
+			.querySelector('div .summary_text')
+			.firstChild.textContent.trim();
+		const duration = domDoc2
+			.querySelector('div .subtext time')
+			.innerHTML.trim();
+		const genre = domDoc2.querySelector('div .subtext a').innerHTML;
 		movies.push({
 			title,
 			movie_release_year,
